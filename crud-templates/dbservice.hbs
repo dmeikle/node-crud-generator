@@ -1,0 +1,17 @@
+import { Injectable } from '@nestjs/common';
+import { BaseDbService } from '@mvc/data/base-db.service';
+import { Prisma } from "@prisma/client";
+import { PrismaService } from "@prisma";
+import { {{dtoClassName}} } from '../dtos/{{dashedFileName}}.dto';
+import { {{notFoundErrorClassName}} } from '../exceptions/{{dashedFileName}}-not-found-error';
+
+@Injectable()
+export class {{pluralClassName}}DbService extends BaseDbService<Prisma.{{pluralClassName}}Delegate, {{dtoClassName}}> {
+    constructor(prisma: PrismaService) {
+        super({{dtoClassName}}, prisma.{{camelCase pluralClassName}});
+    }
+
+    throw404(id: string): never {
+        throw new {{notFoundErrorClassName}}(id);
+    }
+}

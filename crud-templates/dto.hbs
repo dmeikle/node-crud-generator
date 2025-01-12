@@ -1,0 +1,11 @@
+export class {{className}} {
+{{#each columns}}
+    {{this.name}}: {{this.type}};
+{{/each}}
+
+    constructor(row: any) {
+    {{#each columns}}
+        this.{{this.name}} = row.{{this.name}};
+    {{/each}}
+    }
+}

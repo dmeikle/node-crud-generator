@@ -1,0 +1,19 @@
+import { IsNotEmpty, IsString, IsBoolean, IsOptional } from 'class-validator';
+
+export class {{className}} {
+{{#each columns}}
+
+    {{#if this.isNotNull}}
+    @IsNotEmpty()
+    {{else}}
+    @IsOptional()
+    {{/if}}
+    {{#if (eq this.type "string")}}
+    @IsString()
+    {{/if}}
+    {{#if (eq this.type "boolean")}}
+    @IsBoolean()
+    {{/if}}
+    {{this.name}}: {{this.type}};
+{{/each}}
+}

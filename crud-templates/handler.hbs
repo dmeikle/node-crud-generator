@@ -1,0 +1,11 @@
+import { Injectable } from '@nestjs/common';
+import { BaseHandler } from '@mvc/handlers/base.handler';
+import { {{dbServiceClassName}} } from '../data/{{dashedFileNamePlural}}-db.service';
+import { {{dtoClassName}} } from '../dtos/{{dashedFileName}}.dto';
+
+@Injectable()
+export class {{className}} extends BaseHandler<{{dbServiceClassName}}, {{dtoClassName}}> {
+    constructor(dbService: {{dbServiceClassName}}) {
+        super(dbService);
+    }
+}

@@ -1,0 +1,10 @@
+import { NotFoundSystemError } from '@mvc/exceptions/not-found-system.error';
+import { Constants } from  '../config/constants';
+
+export class {{className}}NotFoundError extends NotFoundSystemError {
+    constructor(id: string) {
+        super('No {{className}} found with id ' + id, Constants.{{upperCaseClassName}}_NOT_FOUND_ERROR, id, '{{lowerCaseClassName}}#not-found');
+    }
+}
+
+

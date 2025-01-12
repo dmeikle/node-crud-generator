@@ -1,0 +1,13 @@
+model {{modelName}} {
+{{#each columns}}
+    {{this.name}} {{this.type}}{{#if this.isId}} @id @default(uuid()){{/if}}{{#if this.isOptional}}?{{/if}}{{#if this.dbSpecific}} @db.{{this.dbSpecific}}{{/if}}
+{{/each}}
+
+{{#each relations}}
+    {{this.name}} {{this.relatedModel}} @relation(fields: [{{this.field}}], references: [{{this.references}}], onDelete: {{this.onDelete}}, onUpdate: {{this.onUpdate}})
+{{/each}}
+
+{{#each indexes}}
+    @@index([{{this.fields}}], name: "{{this.name}}")
+{{/each}}
+}

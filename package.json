@@ -1,0 +1,16 @@
+{
+  "name": "generate-crud",
+  "version": "1.0.0",
+  "description": "generates crud files from sql",
+  "main": "generate-crud.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dave Meikle",
+  "license": "MIT",
+  "dependencies": {
+    "handlebars": "^4.7.8",
+    "lodash": "^4.17.21",
+    "node-sql-parser": "^5.3.6"
+  }
+}

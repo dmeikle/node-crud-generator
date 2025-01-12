@@ -1,0 +1,17 @@
+import { Module } from '@nestjs/common';
+import { {{pluralClassName}}Controller } from './controllers/{{dashedFileNamePlural}}.controller';
+import { {{pluralClassName}}DbService } from './data/{{dashedFileNamePlural}}-db.service';
+import { {{pluralClassName}}Handler } from './handlers/{{dashedFileNamePlural}}.handler';
+import { SharedModule } from '../shared/shared.module';
+
+@Module({
+    controllers: [{{pluralClassName}}Controller],
+    providers: [
+        {{pluralClassName}}DbService,
+        {{pluralClassName}}Handler
+    ], // Provide the service and handler
+    exports: [], // Export the services for use in other modules
+    imports: [SharedModule],
+})
+
+export class {{pluralClassName}}Module {}
