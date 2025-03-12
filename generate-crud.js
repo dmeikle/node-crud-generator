@@ -284,14 +284,14 @@ try {
 
     // Generate response file
     fs.writeFileSync(`output/http/responses/${singularFileName}.response.ts`, responseTemplate({
-        className: `${singularClassName}Response`,
+        className: `${singularClassName}`,
         dtoClassName: `${singularClassName}Dto`,
         dashedFileName: singularFileName,
     }));
 
     // Generate list response file
     fs.writeFileSync(`output/http/responses/${pluralFileName}-list.response.ts`, listResponseTemplate({
-        className: `${pluralClassName}ListResponse`,
+        className: `${pluralClassName}`,
         responseDtoClassName: `${singularClassName}Dto`,
         dashedFileName: singularFileName,
         dashedFileNamePlural: pluralFileName,

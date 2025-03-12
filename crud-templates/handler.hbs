@@ -4,7 +4,7 @@ import { {{dbServiceClassName}} } from '../data/{{dashedFileNamePlural}}-db.serv
 import { {{dtoClassName}} } from '../dtos/{{dashedFileName}}.dto';
 
 @Injectable()
-export class {{className}} extends BaseHandler<{{dbServiceClassName}}, {{dtoClassName}}> {
+export class {{className}} extends BaseHandler<{{dbServiceClassName}}, {{dtoClassName}}, {{dtoClassName}}> {
     constructor(dbService: {{dbServiceClassName}}) {
         super(dbService);
     }

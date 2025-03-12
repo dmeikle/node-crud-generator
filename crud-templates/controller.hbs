@@ -1,5 +1,4 @@
 import { BaseController } from '@mvc/controllers/base.controller';
-import { ListResultset } from '@mvc/data/list-resultset';
 import { Controller } from '@nestjs/common';
 import { {{handlerClassName}} } from '../handlers/{{dashedFileNamePlural}}.handler';
 import { {{requestClassName}} } from '../http/requests/{{dashedFileName}}.request';
@@ -13,25 +12,11 @@ export class {{className}} extends BaseController<
     {{requestClassName}},
     {{dtoClassName}},
     {{responseClassName}},
-    {{listResponseClassName}}
+    {{listResponseClassName}},
+    {{dtoClassName}}
     > {
     constructor(handler: {{handlerClassName}}) {
-        super(handler);
+        super(handler, {{dtoClassName}}, {{responseClassName}}, {{listResponseClassName}});
     }
 
-  getDtoConstructor(): new (request: {{requestClassName}}) => {{dtoClassName}} {
-    return {{dtoClassName}};
-  }
-
-    createDtoFromRequest(request: {{requestClassName}}): {{dtoClassName}} {
-        return new {{dtoClassName}}(request);
-    }
-
-    createResponseFromDto(dto: {{dtoClassName}}): {{responseClassName}} {
-        return new {{responseClassName}}(dto, {});
-    }
-
-    createResponseList(list: ListResultset<{{dtoClassName}}>): {{listResponseClassName}} {
-        return new {{listResponseClassName}}(list);
-    }
 }

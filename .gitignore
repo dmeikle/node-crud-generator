@@ -1,5 +1,5 @@
 .idea
 
 node_modules
-output
+../../techademics/code/neaaat-be-datastack/apps/users/src/output
 package-lock.json

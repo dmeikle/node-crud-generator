@@ -2,7 +2,7 @@
 import { HttpResponse } from "@mvc/http/responses/http.response";
 import { {{dtoClassName}} } from '../../dtos/{{dashedFileName}}.dto';
 
-export class {{className}} extends HttpResponse {
+export class {{className}}Response extends HttpResponse {
     constructor(data: {{dtoClassName}}, details?: object) {
         super(data, '{{className}}', data.id, details);
     }

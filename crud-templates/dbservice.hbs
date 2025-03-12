@@ -6,7 +6,7 @@ import { {{dtoClassName}} } from '../dtos/{{dashedFileName}}.dto';
 import { {{notFoundErrorClassName}} } from '../exceptions/{{dashedFileName}}-not-found-error';
 
 @Injectable()
-export class {{pluralClassName}}DbService extends BaseDbService<Prisma.{{pluralClassName}}Delegate, {{dtoClassName}}> {
+export class {{pluralClassName}}DbService extends BaseDbService<Prisma.{{pluralClassName}}Delegate, {{dtoClassName}}, {{dtoClassName}}> {
     constructor(prisma: PrismaService) {
         super({{dtoClassName}}, prisma.{{camelCase pluralClassName}});
     }

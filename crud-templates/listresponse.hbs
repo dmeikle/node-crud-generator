@@ -2,8 +2,8 @@ import { {{responseDtoClassName}} } from '../../dtos/{{dashedFileName}}.dto';
 import { ListResponse } from '@mvc/http/responses/list-response';
 import { ListResultset } from '@mvc/data/list-resultset';
 
-export class {{className}} extends ListResponse {
+export class {{className}}ListResponse extends ListResponse {
     constructor(list: ListResultset<{{responseDtoClassName}}>) {
-        super(list, '{{className}}');
+        super(list, '{{className}}List');
     }
 }
